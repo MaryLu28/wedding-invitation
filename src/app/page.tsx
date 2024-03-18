@@ -1,5 +1,24 @@
-import Image from "next/image";
+"use client";
+
+import styled from "styled-components";
+
+import Header from "./components/header";
+
+const MainContainer = styled.main`
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f2f2f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+`;
 
 export default function Home() {
-  return <h1>Hola Mundo!!</h1>;
+  return (
+    <MainContainer>
+      <Header />
+      <div style={{ height: "100px" }}>prueba</div>
+    </MainContainer>
+  );
 }

@@ -5,7 +5,7 @@ import background from "../../../public/img/bg.png";
 import logo from "../../../public/img/logo-without-bg.png";
 import decoration from "../../../public/img/bg-decoration-wobg.png";
 
-import { mobile, tablet } from "../shared/breackpoints";
+import { desktop, mobile, tablet } from "../shared/breackpoints";
 import { colors } from "../shared/colors";
 
 const eyesomeScriptFont = localFont({
@@ -14,8 +14,7 @@ const eyesomeScriptFont = localFont({
 
 const Container = styled.section`
   width: 100%;
-  height: 100vh;
-  min-height: 600px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,7 +35,7 @@ const Logo = styled.img`
   }
 
   @media (${tablet}) {
-    width: 500px;
+    width: 400px;
   }
 `;
 
@@ -56,6 +55,11 @@ const Decoration = styled.div<{
   }
 
   @media (${tablet}) {
+    width: 180px;
+    height: 342px;
+  }
+
+  @media (${desktop}) {
     width: 250px;
     height: 422px;
   }
@@ -101,15 +105,31 @@ const Title = styled.h2`
   font-weight: normal;
   text-align: center;
   color: ${colors.text};
-  font-size: 64px;
+  font-size: 34px;
+
+  &:first-of-type {
+    margin-top: 20px;
+  }
+  &:last-of-type {
+    margin-bottom: 20px;
+  }
+
+  @media (${mobile}) {
+    font-size: 46px;
+  }
+
+  @media (${tablet}) {
+    font-size: 64px;
+  }
 `;
 
 export default function Header() {
   return (
     <Container>
       <Decoration position="left" />
-      <Title>MaryLu & Manuel</Title>
+      <Title>Matrimonio</Title>
       <Logo src={logo.src} alt="logo" />
+      <Title>MaryLu & Manuel</Title>
       <Decoration position="right" />
     </Container>
   );

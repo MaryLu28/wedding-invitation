@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <MainContainer>
       <Header />
-      <div style={{ height: "100px" }}>prueba</div>
+      <div style={{ height: "200px" }}>prueba</div>
     </MainContainer>
   );
 }

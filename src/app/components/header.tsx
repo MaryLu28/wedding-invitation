@@ -104,7 +104,7 @@ const Title = styled.h2`
   font-family: ${eyesomeScriptFont.style.fontFamily};
   font-weight: normal;
   text-align: center;
-  color: ${colors.text};
+  color: ${colors.darkerYellow};
   font-size: 34px;
 
   &:first-of-type {

@@ -3,6 +3,7 @@
 import styled from "styled-components";
 
 import Header from "./components/header";
+import Countdown from "./components/countdown";
 
 const MainContainer = styled.main`
   min-height: 100vh;
@@ -18,7 +19,7 @@ export default function Home() {
   return (
     <MainContainer>
       <Header />
-      <div style={{ height: "200px" }}>prueba</div>
+      <Countdown />
     </MainContainer>
   );
 }

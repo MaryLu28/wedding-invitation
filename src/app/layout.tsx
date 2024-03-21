@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Merriweather } from "next/font/google";
+import "@leenguyen/react-flip-clock-countdown/dist/index.css";
 import "./globals.css";
 
 const merriweather = Merriweather({ weight: "400", subsets: ["cyrillic"] });

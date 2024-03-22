@@ -1,9 +1,9 @@
-import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import { CountdownCircleTimer, Props } from "react-countdown-circle-timer";
 import styled from "styled-components";
 import { useMediaQuery } from "usehooks-ts";
 
 import { colors } from "../shared/colors";
+import { useEffect, useState } from "react";
 
 const Container = styled.section`
   width: 100%;
@@ -68,21 +68,28 @@ const getTimeDays = (time: number) => (time / daySeconds) | 0;
 export default function Countdown() {
   const isMobileXl = useMediaQuery("(min-width: 425px)");
   const isDesktop = useMediaQuery("(min-width: 600px)");
+  const [startTime, setStartTime] = useState(0);
+
+  useEffect(() => {
+    setStartTime(Date.now() / 1000);
+  }, []);
 
   const timerProps: Props = {
     duration: minuteSeconds,
     isPlaying: true,
-    size: isMobileXl ? (isDesktop ? 120 : 80) : 60,
+    size: isMobileXl ? (isDesktop ? 120 : 80) : 65,
     strokeWidth: 2,
     colors: "#CAA971",
     trailColor: "#E1D0B6",
     rotation: "counterclockwise",
   };
 
-  const startTime = Date.now() / 1000; // use UNIX timestamp in seconds
-  const endTime = startTime + 243248;
+  const endTime = Math.floor(
+    new Date("Jun 22 2024 17:00:00 GMT-0300").getTime() / 1000
+  ); // use UNIX timestamp in seconds
 
   const remainingTime = endTime - startTime;
+
   const days = Math.ceil(remainingTime / daySeconds);
   const daysDuration = days * daySeconds; // use UNIX timestamp in seconds
 
@@ -124,7 +131,10 @@ export default function Countdown() {
         >
           {({ elapsedTime, color }) => (
             <span style={{ color }}>
-              {renderTime("Minutos", getTimeMinutes(hourSeconds - elapsedTime))}
+              {renderTime(
+                isMobileXl ? "Minutos" : "Min",
+                getTimeMinutes(hourSeconds - elapsedTime)
+              )}
             </span>
           )}
         </CountdownCircleTimer>
@@ -138,7 +148,11 @@ export default function Countdown() {
         >
           {({ elapsedTime, color }) => (
             <span style={{ color }}>
-              {renderTime("Segundos", getTimeSeconds(elapsedTime))}
+              {renderTime(
+                isMobileXl ? "Segundos" : "Seg",
+
+                getTimeSeconds(elapsedTime)
+              )}
             </span>
           )}
         </CountdownCircleTimer>

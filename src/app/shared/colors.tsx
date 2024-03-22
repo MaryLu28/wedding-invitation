@@ -16,6 +16,7 @@ export const colors = {
   brightYellow4: "#E1D0B6",
   brightYellow6: "#E8DAC1",
   brightYellow7: "#EDE1CE",
+  brightYellow8: "#f5efe6",
 
   color1: "#DCC8B4",
   color2: "#ECDDCA",

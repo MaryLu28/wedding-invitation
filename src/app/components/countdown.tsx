@@ -68,21 +68,30 @@ const getTimeDays = (time: number) => (time / daySeconds) | 0;
 export default function Countdown() {
   const isMobileXl = useMediaQuery("(min-width: 425px)");
   const isDesktop = useMediaQuery("(min-width: 600px)");
+
   const [startTime, setStartTime] = useState(0);
-
-  useEffect(() => {
-    setStartTime(Date.now() / 1000);
-  }, []);
-
-  const timerProps: Props = {
+  const [timerProps, setTimerProps] = useState<Props>({
     duration: minuteSeconds,
     isPlaying: true,
-    size: isMobileXl ? (isDesktop ? 120 : 80) : 65,
+    size: 65,
     strokeWidth: 2,
     colors: "#CAA971",
     trailColor: "#E1D0B6",
     rotation: "counterclockwise",
-  };
+  });
+  const [minutesText, setMinutesText] = useState("");
+  const [secondsText, setSecondsText] = useState("");
+
+  useEffect(() => {
+    setStartTime(Date.now() / 1000);
+    setTimerProps({
+      ...timerProps,
+      size: isMobileXl ? (isDesktop ? 120 : 80) : 65,
+    });
+
+    setMinutesText(isMobileXl ? "Minutos" : "Min");
+    setSecondsText(isMobileXl ? "Segundos" : "Seg");
+  }, [isMobileXl, isDesktop]);
 
   const endTime = Math.floor(
     new Date("Jun 22 2024 17:00:00 GMT-0300").getTime() / 1000
@@ -132,7 +141,7 @@ export default function Countdown() {
           {({ elapsedTime, color }) => (
             <span style={{ color }}>
               {renderTime(
-                isMobileXl ? "Minutos" : "Min",
+                minutesText,
                 getTimeMinutes(hourSeconds - elapsedTime)
               )}
             </span>
@@ -148,11 +157,7 @@ export default function Countdown() {
         >
           {({ elapsedTime, color }) => (
             <span style={{ color }}>
-              {renderTime(
-                isMobileXl ? "Segundos" : "Seg",
-
-                getTimeSeconds(elapsedTime)
-              )}
+              {renderTime(secondsText, getTimeSeconds(elapsedTime))}
             </span>
           )}
         </CountdownCircleTimer>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Merriweather } from "next/font/google";
 import "./globals.css";
+import StyledComponentsRegistry from "./registry";
 
 const merriweather = Merriweather({ weight: "400", subsets: ["cyrillic"] });
 
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={merriweather.className}>{children}</body>
+      <body className={merriweather.className}>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   );
 }

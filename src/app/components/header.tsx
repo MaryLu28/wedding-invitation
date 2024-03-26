@@ -40,7 +40,7 @@ const Logo = styled.img`
 `;
 
 const Decoration = styled.div<{
-  position: string;
+  $site: string;
 }>`
   position: absolute;
   background-image: url(${decoration.src});
@@ -65,7 +65,7 @@ const Decoration = styled.div<{
   }
 
   ${(props) =>
-    props.position == "left" &&
+    props.$site == "left" &&
     css`
       top: -170px;
       left: -90px;
@@ -82,7 +82,7 @@ const Decoration = styled.div<{
     `}
 
   ${(props) =>
-    props.position == "right" &&
+    props.$site == "right" &&
     css`
       bottom: -160px;
       right: -90px;
@@ -126,11 +126,11 @@ const Title = styled.h2`
 export default function Header() {
   return (
     <Container>
-      <Decoration position="left" />
+      <Decoration $site="left" />
       <Title>Matrimonio</Title>
       <Logo src={logo.src} alt="logo" />
       <Title>MaryLu & Manuel</Title>
-      <Decoration position="right" />
+      <Decoration $site="right" />
     </Container>
   );
 }

@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Header from "./components/header";
 import Countdown from "./components/countdown";
+import { useRef } from "react";
 
 const MainContainer = styled.main`
   min-height: 100vh;
@@ -16,10 +17,13 @@ const MainContainer = styled.main`
 `;
 
 export default function Home() {
+  const ref = useRef<HTMLElement>(null);
+
+  const onScroll = () => ref.current?.scrollIntoView({ behavior: "smooth" });
   return (
     <MainContainer>
-      <Header />
-      <Countdown />
+      <Header onScroll={onScroll} />
+      <Countdown ref={ref} />
     </MainContainer>
   );
 }

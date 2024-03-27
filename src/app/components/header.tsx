@@ -5,7 +5,7 @@ import background from "../../../public/img/bg.png";
 import logo from "../../../public/img/logo-without-bg.png";
 import decoration from "../../../public/img/bg-decoration-wobg.png";
 
-import { desktop, mobile, tablet } from "../shared/breackpoints";
+import { desktop, mobile, tablet } from "../shared/breakpoints";
 import { colors } from "../shared/colors";
 
 const eyesomeScriptFont = localFont({
@@ -123,7 +123,31 @@ const Title = styled.h2`
   }
 `;
 
-export default function Header() {
+const ScrollDownArrow = styled.button`
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  z-index: 100;
+  text-decoration: none;
+  text-shadow: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid ${colors.yellow1};
+  border-right: 2px solid ${colors.yellow1};
+  z-index: 9;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%) rotate(45deg);
+  -moz-transform: translate(-50%, 0%) rotate(45deg);
+  transform: translate(-50%, 0%) rotate(45deg);
+  -webkit-animation: fade_move_down 4s ease-in-out infinite;
+  -moz-animation: fade_move_down 4s ease-in-out infinite;
+  animation: fade_move_down 4s ease-in-out infinite;
+`;
+
+export default function Header({ onScroll }: { onScroll: () => any }) {
   return (
     <Container>
       <Decoration $site="left" />
@@ -131,6 +155,7 @@ export default function Header() {
       <Logo src={logo.src} alt="logo" />
       <Title>MaryLu & Manuel</Title>
       <Decoration $site="right" />
+      <ScrollDownArrow onClick={onScroll} />
     </Container>
   );
 }

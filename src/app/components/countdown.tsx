@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import { CountdownCircleTimer, Props } from "react-countdown-circle-timer";
 import styled from "styled-components";
 import { useMediaQuery } from "usehooks-ts";
 
-import { tablet } from "../shared/breackpoints";
+import { tablet } from "../shared/breakpoints";
 import { colors } from "../shared/colors";
 
 import heartIcon from "../../../public/img/heart-icon.svg";
@@ -94,7 +94,7 @@ const getTimeMinutes = (time: number) =>
 const getTimeHours = (time: number) => ((time % daySeconds) / hourSeconds) | 0;
 const getTimeDays = (time: number) => (time / daySeconds) | 0;
 
-export default function Countdown() {
+export default forwardRef<HTMLElement>(function Countdown(props, ref) {
   const isMobileXl = useMediaQuery("(min-width: 425px)");
   const isDesktop = useMediaQuery("(min-width: 600px)");
 
@@ -132,7 +132,7 @@ export default function Countdown() {
   const daysDuration = days * daySeconds;
 
   return (
-    <Container>
+    <Container ref={ref}>
       <Content>
         <CountdownCircleTimer
           {...timerProps}
@@ -197,4 +197,4 @@ export default function Countdown() {
       </Text>
     </Container>
   );
-}
+});

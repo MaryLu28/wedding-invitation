@@ -122,12 +122,14 @@ export default function Countdown() {
     setSecondsText(isMobileXl ? "Segundos" : "Seg");
   }, [isMobileXl, isDesktop]);
 
-  const endTime = Math.floor(new Date(date).getTime() / 1000); // use UNIX timestamp in seconds
+  // use UNIX timestamp in seconds
+  const endTime = Math.floor(new Date(date).getTime() / 1000);
 
   const remainingTime = endTime - startTime;
 
   const days = Math.ceil(remainingTime / daySeconds);
-  const daysDuration = days * daySeconds; // use UNIX timestamp in seconds
+  // use UNIX timestamp in seconds
+  const daysDuration = days * daySeconds;
 
   return (
     <Container>

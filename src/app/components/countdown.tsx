@@ -189,7 +189,7 @@ export default function Countdown() {
           )}
         </CountdownCircleTimer>
       </Content>
-      <Icon src={heartIcon.src} />
+      <Icon src={heartIcon.src} alt="icono corazón" />
       <Text>
         Queremos celebrar junto a ti este momento tan especial para nosotros...
       </Text>

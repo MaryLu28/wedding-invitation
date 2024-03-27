@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { colors } from "../shared/colors";
 import { tablet } from "../shared/breakpoints";
 
+import churchIcon from "../../../public/img/icono-ceremonia.svg";
+import partyIcon from "../../../public/img/icono-fiesta.svg";
+
 import data from "../data.json";
 
 const Container = styled.section`
@@ -11,7 +14,7 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 20px 20px 60px;
 `;
 
 const Content = styled.div`
@@ -33,6 +36,10 @@ const Info = styled.div`
   @media (${tablet}) {
     width: 50%;
   }
+`;
+
+const Icon = styled.img`
+  width: 140px;
 `;
 
 const Title = styled.h4`
@@ -62,13 +69,15 @@ const MapsBtn = styled.a`
   font-size: 16px;
   padding: 10px;
   color: ${colors.brightYellow8};
-  background-color: ${colors.brightYellow1};
+  background-color: ${colors.yellow1};
   margin: 20px auto 0;
 `;
 
 export default function CeremonyAndParty() {
   const ceremonyDate = new Date(data.ceremony.date);
-  const ceremonyDateStr = ceremonyDate.toLocaleDateString("es-VE");
+  const ceremonyDateStr = ceremonyDate.toLocaleDateString("es-VE", {
+    dateStyle: "long",
+  });
   const ceremonyTimeStr = ceremonyDate.toLocaleTimeString("es-VE", {
     hour: "2-digit",
     minute: "2-digit",
@@ -89,6 +98,7 @@ export default function CeremonyAndParty() {
     <Container>
       <Content>
         <Info>
+          <Icon src={churchIcon.src} alt="icono iglesia" />
           <Title>Ceremonia</Title>
           <DateText>{ceremonyDateStr}</DateText>
           <DateText>{ceremonyTimeStr}</DateText>
@@ -99,6 +109,7 @@ export default function CeremonyAndParty() {
           </MapsBtn>
         </Info>
         <Info>
+          <Icon src={partyIcon.src} alt="icono fiesta" />
           <Title>Fiesta</Title>
           <DateText>{partyDateStr}</DateText>
           <DateText>{partyTimeStr}</DateText>

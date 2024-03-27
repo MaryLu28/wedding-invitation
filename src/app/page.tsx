@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Header from "./components/header";
 import Countdown from "./components/countdown";
 import { useRef } from "react";
+import CeremonyAndParty from "./components/ceremony-and-party";
 
 const MainContainer = styled.main`
   min-height: 100vh;
@@ -24,6 +25,7 @@ export default function Home() {
     <MainContainer>
       <Header onScroll={onScroll} />
       <Countdown ref={ref} />
+      <CeremonyAndParty />
     </MainContainer>
   );
 }

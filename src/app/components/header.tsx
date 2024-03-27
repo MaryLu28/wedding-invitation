@@ -8,6 +8,8 @@ import decoration from "../../../public/img/bg-decoration-wobg.png";
 import { desktop, mobile, tablet } from "../shared/breakpoints";
 import { colors } from "../shared/colors";
 
+import data from "../data.json";
+
 const eyesomeScriptFont = localFont({
   src: "../../../public/fonts/Eyesome/Eyesome Script.otf",
 });
@@ -153,7 +155,7 @@ export default function Header({ onScroll }: { onScroll: () => any }) {
       <Decoration $site="left" />
       <Title>Matrimonio</Title>
       <Logo src={logo.src} alt="logo" />
-      <Title>MaryLu & Manuel</Title>
+      <Title>{data.names}</Title>
       <Decoration $site="right" />
       <ScrollDownArrow onClick={onScroll} />
     </Container>

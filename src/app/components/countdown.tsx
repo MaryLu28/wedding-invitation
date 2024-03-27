@@ -8,7 +8,7 @@ import { colors } from "../shared/colors";
 
 import heartIcon from "../../../public/img/heart-icon.svg";
 
-import { date } from "../../../public/data.json";
+import data from "../data.json";
 
 const Container = styled.section`
   width: 100%;
@@ -123,7 +123,7 @@ export default forwardRef<HTMLElement>(function Countdown(props, ref) {
   }, [isMobileXl, isDesktop]);
 
   // use UNIX timestamp in seconds
-  const endTime = Math.floor(new Date(date).getTime() / 1000);
+  const endTime = Math.floor(new Date(data.date).getTime() / 1000);
 
   const remainingTime = endTime - startTime;
 

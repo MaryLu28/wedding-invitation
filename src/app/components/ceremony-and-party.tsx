@@ -39,20 +39,24 @@ const Info = styled.div`
 `;
 
 const Icon = styled.img`
-  width: 140px;
+  width: 240px;
+  margin-bottom: -40px;
 `;
 
 const Title = styled.h4`
   font-size: 28px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   color: ${colors.yellow1};
   text-align: center;
   font-weight: 400;
 `;
 
+const DateInfo = styled.div`
+  margin-bottom: 24px;
+`;
+
 const DateText = styled.p`
   font-size: 18px;
-  margin-bottom: 6px;
   text-align: center;
   color: ${colors.darkerYellow};
   font-weight: 500;
@@ -100,8 +104,10 @@ export default function CeremonyAndParty() {
         <Info>
           <Icon src={churchIcon.src} alt="icono iglesia" />
           <Title>Ceremonia</Title>
-          <DateText>{ceremonyDateStr}</DateText>
-          <DateText>{ceremonyTimeStr}</DateText>
+          <DateInfo>
+            <DateText>{ceremonyDateStr}</DateText>
+            <DateText>{ceremonyTimeStr}</DateText>
+          </DateInfo>
           <Text>{data.ceremony.church}</Text>
           <Text>{data.ceremony.address}</Text>
           <MapsBtn href={data.ceremony.mapsLink} target="_blank">
@@ -111,8 +117,10 @@ export default function CeremonyAndParty() {
         <Info>
           <Icon src={partyIcon.src} alt="icono fiesta" />
           <Title>Fiesta</Title>
-          <DateText>{partyDateStr}</DateText>
-          <DateText>{partyTimeStr}</DateText>
+          <DateInfo>
+            <DateText>{partyDateStr}</DateText>
+            <DateText>{partyTimeStr}</DateText>
+          </DateInfo>
           <Text>{data.party.venue}</Text>
           <Text>{data.party.address}</Text>
           <MapsBtn href={data.party.mapsLink} target="_blank">

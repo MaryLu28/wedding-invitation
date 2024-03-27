@@ -1,9 +1,14 @@
+import { useEffect, useState } from "react";
 import { CountdownCircleTimer, Props } from "react-countdown-circle-timer";
 import styled from "styled-components";
 import { useMediaQuery } from "usehooks-ts";
 
+import { tablet } from "../shared/breackpoints";
 import { colors } from "../shared/colors";
-import { useEffect, useState } from "react";
+
+import heartIcon from "../../../public/img/heart-icon.svg";
+
+import { date } from "../../../public/data.json";
 
 const Container = styled.section`
   width: 100%;
@@ -12,7 +17,7 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
 `;
 
 const Content = styled.div`
@@ -21,6 +26,11 @@ const Content = styled.div`
   max-width: 600px;
   justify-content: space-around;
   text-align: center;
+  margin-bottom: 20px;
+
+  @media (${tablet}) {
+    margin-bottom: 40px;
+  }
 `;
 
 const TimeContainer = styled.div`
@@ -43,6 +53,25 @@ const TimeDimension = styled.span`
 
   @media (min-width: 600px) {
     font-size: 18px;
+  }
+`;
+
+const Icon = styled.img`
+  width: 100px;
+  margin-bottom: 20px;
+
+  @media (${tablet}) {
+    width: 150px;
+  }
+`;
+
+const Text = styled.p`
+  color: ${colors.darkerYellow};
+  font-size: 18px;
+  text-align: center;
+
+  @media (${tablet}) {
+    font-size: 24px;
   }
 `;
 
@@ -93,9 +122,7 @@ export default function Countdown() {
     setSecondsText(isMobileXl ? "Segundos" : "Seg");
   }, [isMobileXl, isDesktop]);
 
-  const endTime = Math.floor(
-    new Date("Jun 22 2024 17:00:00 GMT-0300").getTime() / 1000
-  ); // use UNIX timestamp in seconds
+  const endTime = Math.floor(new Date(date).getTime() / 1000); // use UNIX timestamp in seconds
 
   const remainingTime = endTime - startTime;
 
@@ -162,6 +189,10 @@ export default function Countdown() {
           )}
         </CountdownCircleTimer>
       </Content>
+      <Icon src={heartIcon.src} />
+      <Text>
+        Queremos celebrar junto a ti este momento tan especial para nosotros...
+      </Text>
     </Container>
   );
 }

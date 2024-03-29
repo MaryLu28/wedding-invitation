@@ -7,6 +7,7 @@ import Countdown from "./components/countdown";
 import CeremonyAndParty from "./components/ceremony-and-party";
 import DressCode from "./components/dress-code";
 import Header from "./components/header";
+import RSVP from "./components/rsvp";
 
 const MainContainer = styled.main`
   min-height: 100vh;
@@ -28,6 +29,7 @@ export default function Home() {
       <Countdown ref={ref} />
       <CeremonyAndParty />
       <DressCode />
+      <RSVP />
     </MainContainer>
   );
 }

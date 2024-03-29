@@ -1,11 +1,12 @@
 "use client";
 
+import { useRef } from "react";
 import styled from "styled-components";
 
-import Header from "./components/header";
 import Countdown from "./components/countdown";
-import { useRef } from "react";
 import CeremonyAndParty from "./components/ceremony-and-party";
+import DressCode from "./components/dress-code";
+import Header from "./components/header";
 
 const MainContainer = styled.main`
   min-height: 100vh;
@@ -26,6 +27,7 @@ export default function Home() {
       <Header onScroll={onScroll} />
       <Countdown ref={ref} />
       <CeremonyAndParty />
+      <DressCode />
     </MainContainer>
   );
 }

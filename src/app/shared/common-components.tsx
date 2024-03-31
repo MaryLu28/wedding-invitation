@@ -28,6 +28,8 @@ const buttonStyle = css`
   color: ${colors.brightYellow8};
   background-color: ${colors.yellow1};
   margin: 20px auto 0;
+  text-align: center;
+  min-width: 120px;
 `;
 
 export const ButtonLink = styled.a`

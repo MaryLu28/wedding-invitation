@@ -9,6 +9,7 @@ import DressCode from "./components/dress-code";
 import Header from "./components/header";
 import RSVP from "./components/rsvp";
 import Gift from "./components/gift";
+import Music from "./components/music";
 
 const MainContainer = styled.main`
   min-height: 100vh;
@@ -31,6 +32,7 @@ export default function Home() {
       <CeremonyAndParty />
       <DressCode />
       <RSVP />
+      <Music />
       <Gift />
     </MainContainer>
   );

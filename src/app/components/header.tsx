@@ -128,7 +128,7 @@ const Title = styled.h2`
 const ScrollDownArrow = styled.button`
   position: absolute;
   left: 50%;
-  bottom: 30px;
+  bottom: 70px;
   display: block;
   text-align: center;
   font-size: 20px;
@@ -147,6 +147,10 @@ const ScrollDownArrow = styled.button`
   -webkit-animation: fade_move_down 4s ease-in-out infinite;
   -moz-animation: fade_move_down 4s ease-in-out infinite;
   animation: fade_move_down 4s ease-in-out infinite;
+
+  @media (${tablet}) {
+    bottom: 30px;
+  }
 `;
 
 export default function Header({ onScroll }: { onScroll: () => any }) {

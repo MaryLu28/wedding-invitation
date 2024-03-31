@@ -19,7 +19,6 @@ const Icon = styled.img`
 
 const Text = styled.p`
   font-size: 20px;
-  margin-bottom: 6px;
   text-align: center;
   color: ${colors.darkerYellow};
   margin-bottom: 20px;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { colors } from "./colors";
 
 export const Title = styled.h4`
@@ -22,10 +22,18 @@ export const Container = styled.section<{
   padding: ${(props) => props.$padding ?? "60px 20px"};
 `;
 
-export const ButtonLink = styled.a`
+const buttonStyle = css`
   font-size: 16px;
   padding: 10px;
   color: ${colors.brightYellow8};
   background-color: ${colors.yellow1};
   margin: 20px auto 0;
+`;
+
+export const ButtonLink = styled.a`
+  ${buttonStyle}
+`;
+
+export const Button = styled.button`
+  ${buttonStyle}
 `;

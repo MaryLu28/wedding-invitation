@@ -4,7 +4,7 @@ import { colors } from "../shared/colors";
 import iconCalendar from "../../../public/img/icono-calendario.svg";
 
 import data from "../data.json";
-import { Container, Title } from "../shared/common-components";
+import { ButtonLink, Container, Title } from "../shared/common-components";
 
 const Content = styled.div`
   display: flex;
@@ -27,14 +27,6 @@ const Text = styled.p`
   margin-bottom: 20px;
 `;
 
-const Button = styled.a`
-  font-size: 16px;
-  padding: 10px;
-  color: ${colors.brightYellow8};
-  background-color: ${colors.yellow1};
-  margin: 20px auto 0;
-`;
-
 export default function RSVP() {
   return (
     <Container
@@ -47,14 +39,14 @@ export default function RSVP() {
           Esperamos que seas parte de esta gran celebración. <br /> ¡Confírmanos
           tu asistencia!
         </Text>
-        <Button href={data.rsvpLink} target="_blank">
+        <ButtonLink href={data.rsvpLink} target="_blank">
           Confirmar asistencia
-        </Button>
+        </ButtonLink>
         <Icon src={iconCalendar.src} alt="Icono calendario" />
         <Text>¡Agenda la fecha en tu calendario!</Text>
-        <Button href={data.calendarLink} target="_blank">
+        <ButtonLink href={data.calendarLink} target="_blank">
           Agendar evento
-        </Button>
+        </ButtonLink>
       </Content>
     </Container>
   );

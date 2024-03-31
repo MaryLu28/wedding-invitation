@@ -21,3 +21,11 @@ export const Container = styled.section<{
   align-items: center;
   padding: ${(props) => props.$padding ?? "60px 20px"};
 `;
+
+export const ButtonLink = styled.a`
+  font-size: 16px;
+  padding: 10px;
+  color: ${colors.brightYellow8};
+  background-color: ${colors.yellow1};
+  margin: 20px auto 0;
+`;

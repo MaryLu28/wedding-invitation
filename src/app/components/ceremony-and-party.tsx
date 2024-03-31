@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { colors } from "../shared/colors";
-import { Container, Title } from "../shared/common-components";
+import { ButtonLink, Container, Title } from "../shared/common-components";
 import { tablet } from "../shared/breakpoints";
 
 import churchIcon from "../../../public/img/icono-ceremonia.svg";
@@ -53,14 +53,6 @@ const Text = styled.p`
   color: ${colors.darkerYellow};
 `;
 
-const MapsBtn = styled.a`
-  font-size: 16px;
-  padding: 10px;
-  color: ${colors.brightYellow8};
-  background-color: ${colors.yellow1};
-  margin: 20px auto 0;
-`;
-
 export default function CeremonyAndParty() {
   const ceremonyDate = new Date(data.ceremony.date);
   const ceremonyDateStr = ceremonyDate.toLocaleDateString("es-VE", {
@@ -97,9 +89,9 @@ export default function CeremonyAndParty() {
           </DateInfo>
           <Text>{data.ceremony.church}</Text>
           <Text>{data.ceremony.address}</Text>
-          <MapsBtn href={data.ceremony.mapsLink} target="_blank">
+          <ButtonLink href={data.ceremony.mapsLink} target="_blank">
             Cómo llegar
-          </MapsBtn>
+          </ButtonLink>
         </Info>
         <Info>
           <Icon src={partyIcon.src} alt="icono fiesta" />
@@ -110,9 +102,9 @@ export default function CeremonyAndParty() {
           </DateInfo>
           <Text>{data.party.venue}</Text>
           <Text>{data.party.address}</Text>
-          <MapsBtn href={data.party.mapsLink} target="_blank">
+          <ButtonLink href={data.party.mapsLink} target="_blank">
             Cómo llegar
-          </MapsBtn>
+          </ButtonLink>
         </Info>
       </Content>
     </Container>

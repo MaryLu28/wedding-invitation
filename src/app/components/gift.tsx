@@ -67,7 +67,7 @@ export default function Gift() {
 
   return (
     <Container
-      $backgroundColor={colors.brightYellow7}
+      $backgroundColor={colors.brightYellow1}
       $padding="40px 20px 60px"
     >
       <Content>

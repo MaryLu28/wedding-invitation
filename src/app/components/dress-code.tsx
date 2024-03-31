@@ -2,22 +2,12 @@ import styled from "styled-components";
 import { colors } from "../shared/colors";
 
 import iconDressCode from "../../../public/img/icono-dresscode.svg";
-
-const Container = styled.section`
-  width: 100%;
-  background-color: ${colors.brightYellow1};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px 60px;
-`;
+import { Container, Title } from "../shared/common-components";
 
 const Content = styled.div`
   display: flex;
   width: 100%;
   max-width: 600px;
-  display: flex;
   flex-direction: column;
   align-items: center;
 `;
@@ -25,14 +15,6 @@ const Content = styled.div`
 const Icon = styled.img`
   width: 240px;
   margin-bottom: -40px;
-`;
-
-const Title = styled.h4`
-  font-size: 28px;
-  margin-bottom: 16px;
-  color: ${colors.yellow1};
-  text-align: center;
-  font-weight: 400;
 `;
 
 const Text = styled.p`
@@ -52,7 +34,10 @@ const Tips = styled.p`
 
 export default function DressCode() {
   return (
-    <Container>
+    <Container
+      $backgroundColor={colors.brightYellow1}
+      $padding="40px 20px 60px"
+    >
       <Content>
         <Icon src={iconDressCode.src} alt="Icono Dress Code" />
         <Title>Dress Code</Title>

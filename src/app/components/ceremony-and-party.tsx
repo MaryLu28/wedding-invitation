@@ -1,21 +1,13 @@
 import styled from "styled-components";
+
 import { colors } from "../shared/colors";
+import { Container, Title } from "../shared/common-components";
 import { tablet } from "../shared/breakpoints";
 
 import churchIcon from "../../../public/img/icono-ceremonia.svg";
 import partyIcon from "../../../public/img/icono-fiesta.svg";
 
 import data from "../data.json";
-
-const Container = styled.section`
-  width: 100%;
-  background-color: ${colors.brightYellow8};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 20px 60px;
-`;
 
 const Content = styled.div`
   display: flex;
@@ -41,14 +33,6 @@ const Info = styled.div`
 const Icon = styled.img`
   width: 240px;
   margin-bottom: -40px;
-`;
-
-const Title = styled.h4`
-  font-size: 28px;
-  margin-bottom: 16px;
-  color: ${colors.yellow1};
-  text-align: center;
-  font-weight: 400;
 `;
 
 const DateInfo = styled.div`
@@ -99,7 +83,10 @@ export default function CeremonyAndParty() {
   });
 
   return (
-    <Container>
+    <Container
+      $backgroundColor={colors.brightYellow8}
+      $padding="20px 20px 60px"
+    >
       <Content>
         <Info>
           <Icon src={churchIcon.src} alt="icono iglesia" />

@@ -4,22 +4,12 @@ import { colors } from "../shared/colors";
 import iconCalendar from "../../../public/img/icono-calendario.svg";
 
 import data from "../data.json";
-
-const Container = styled.section`
-  width: 100%;
-  background-color: ${colors.brightYellow8};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px 60px;
-`;
+import { Container, Title } from "../shared/common-components";
 
 const Content = styled.div`
   display: flex;
   width: 100%;
   max-width: 600px;
-  display: flex;
   flex-direction: column;
   align-items: center;
 `;
@@ -27,14 +17,6 @@ const Content = styled.div`
 const Icon = styled.img`
   width: 240px;
   margin: -40px 0;
-`;
-
-const Title = styled.h4`
-  font-size: 28px;
-  margin-bottom: 16px;
-  color: ${colors.yellow1};
-  text-align: center;
-  font-weight: 400;
 `;
 
 const Text = styled.p`
@@ -55,7 +37,10 @@ const Button = styled.a`
 
 export default function RSVP() {
   return (
-    <Container>
+    <Container
+      $backgroundColor={colors.brightYellow8}
+      $padding="80px 20px 60px"
+    >
       <Content>
         <Title>RSVP</Title>
         <Text>

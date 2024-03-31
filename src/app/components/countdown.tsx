@@ -5,20 +5,11 @@ import { useMediaQuery } from "usehooks-ts";
 
 import { tablet } from "../shared/breakpoints";
 import { colors } from "../shared/colors";
+import { Container } from "../shared/common-components";
 
 import heartIcon from "../../../public/img/heart-icon.svg";
 
 import data from "../data.json";
-
-const Container = styled.section`
-  width: 100%;
-  background-color: ${colors.brightYellow7};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-`;
 
 const Content = styled.div`
   display: flex;
@@ -132,7 +123,7 @@ export default forwardRef<HTMLElement>(function Countdown(props, ref) {
   const daysDuration = days * daySeconds;
 
   return (
-    <Container ref={ref}>
+    <Container $backgroundColor={colors.brightYellow7} ref={ref}>
       <Content>
         <CountdownCircleTimer
           {...timerProps}

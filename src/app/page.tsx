@@ -8,6 +8,7 @@ import CeremonyAndParty from "./components/ceremony-and-party";
 import DressCode from "./components/dress-code";
 import Header from "./components/header";
 import RSVP from "./components/rsvp";
+import Gift from "./components/gift";
 
 const MainContainer = styled.main`
   min-height: 100vh;
@@ -30,6 +31,7 @@ export default function Home() {
       <CeremonyAndParty />
       <DressCode />
       <RSVP />
+      <Gift />
     </MainContainer>
   );
 }

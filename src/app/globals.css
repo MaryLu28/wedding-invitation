@@ -67,3 +67,20 @@ input[type="reset"] {
     opacity: 0;
   }
 }
+
+.customOverlay {
+  background-color: rgba(82, 74, 63, 0.8);
+}
+
+.customModal {
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: none;
+  padding: 35px 25px 25px;
+}
+
+.customModal svg {
+  width: 24px;
+  height: 24px;
+  fill: #524a3f;
+}

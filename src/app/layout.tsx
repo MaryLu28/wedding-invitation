@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import { Merriweather } from "next/font/google";
-import "./globals.css";
 import StyledComponentsRegistry from "./registry";
+
+import "react-responsive-modal/styles.css";
+import "./globals.css";
+
+import data from "./data.json";
 
 const merriweather = Merriweather({ weight: "400", subsets: ["cyrillic"] });
 
 export const metadata: Metadata = {
-  title: "Boda MaryLu y Manuel 👰🏻🤵🏽",
-  description: "Los invitamos a nuestra boda!",
+  title: data.pageTitle,
+  description: data.pageDescription,
 };
 
 export default function RootLayout({

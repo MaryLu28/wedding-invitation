@@ -39,7 +39,7 @@ export default function DressCode() {
     >
       <Content>
         <Icon src={iconDressCode.src} alt="Icono Dress Code" />
-        <Title>Dress Code</Title>
+        <Title>Código de Vestimenta</Title>
         <Text>Vestimenta formal, elegante</Text>
         <Tips>
           Recuerda que para esa fecha estaremos iniciando el invierno.

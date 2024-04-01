@@ -30,6 +30,7 @@ const buttonStyle = css`
   margin: 20px auto 0;
   text-align: center;
   min-width: 120px;
+  z-index: 1;
 `;
 
 export const ButtonLink = styled.a`

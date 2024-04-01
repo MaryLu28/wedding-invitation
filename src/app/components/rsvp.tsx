@@ -17,6 +17,7 @@ const Content = styled.div`
 const Icon = styled.img`
   width: 240px;
   margin: -40px 0;
+  z-index: 0;
 `;
 
 const Text = styled.p`

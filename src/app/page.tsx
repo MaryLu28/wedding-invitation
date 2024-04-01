@@ -10,6 +10,7 @@ import Header from "./components/header";
 import RSVP from "./components/rsvp";
 import Gift from "./components/gift";
 import Music from "./components/music";
+import UsefulInfo from "./components/useful-info";
 
 const MainContainer = styled.main`
   min-height: 100vh;
@@ -34,6 +35,7 @@ export default function Home() {
       <RSVP />
       <Music />
       <Gift />
+      <UsefulInfo />
     </MainContainer>
   );
 }

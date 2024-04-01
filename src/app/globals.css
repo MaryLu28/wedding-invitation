@@ -79,6 +79,10 @@ input[type="reset"] {
   padding: 35px 25px 25px;
 }
 
+.customModalLarge {
+  max-width: 800px;
+}
+
 .customModal svg {
   width: 24px;
   height: 24px;

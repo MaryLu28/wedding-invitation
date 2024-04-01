@@ -73,7 +73,7 @@ export default function Gift() {
       <Content>
         <Icon src={iconGift.src} alt="Icono Regalo" />
         <Text>{data.gift.message}</Text>
-        <Button onClick={handleShow}>Ver más</Button>
+        <Button onClick={handleShow}>Ver detalles</Button>
         <Modal
           open={show}
           onClose={handleClose}

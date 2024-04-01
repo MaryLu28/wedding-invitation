@@ -83,6 +83,12 @@ input[type="reset"] {
   max-width: 800px;
 }
 
+.dressCodeModal {
+  width: calc(100% - 2.4rem);
+  max-width: 800px;
+  overflow-x: hidden;
+}
+
 .customModal svg {
   width: 24px;
   height: 24px;

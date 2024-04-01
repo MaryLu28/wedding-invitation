@@ -1,10 +1,11 @@
 import styled from "styled-components";
+
+import { ButtonLink, Container, Title } from "../shared/common-components";
 import { colors } from "../shared/colors";
 
 import iconCalendar from "../../../public/img/icono-calendario.svg";
 
 import data from "../data.json";
-import { ButtonLink, Container, Title } from "../shared/common-components";
 
 const Content = styled.div`
   display: flex;

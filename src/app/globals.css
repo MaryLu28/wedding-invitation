@@ -73,20 +73,19 @@ input[type="reset"] {
 }
 
 .customModal {
-  max-width: 600px;
+  max-width: 600px !important;
   border-radius: 10px;
   box-shadow: none;
-  padding: 35px 25px 25px;
+  padding: 35px 25px 25px !important;
 }
 
 .customModalLarge {
-  max-width: 800px;
+  max-width: 800px !important;
 }
 
 .dressCodeModal {
-  width: calc(100% - 2.4rem);
-  max-width: 800px;
-  overflow-x: hidden;
+  width: calc(100% - 2.4rem) !important;
+  max-width: 800px !important;
 }
 
 .customModal svg {

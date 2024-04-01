@@ -106,12 +106,12 @@ const ModalText = styled.p`
 
   @media (${mobile}) {
     font-size: 14px;
+    max-width: 450px;
   }
 
   @media (${tablet}) {
     font-size: 18px;
     margin-bottom: 20px;
-    max-width: 450px;
   }
 `;
 
